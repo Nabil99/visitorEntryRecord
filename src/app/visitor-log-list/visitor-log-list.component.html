@@ -1,0 +1,24 @@
+<h1>Visitor List</h1>
+<table>
+  <tr>
+  <th>Visitor Name</th>
+  <th>Email</th>
+  <th>type of visit</th>
+  <th>person to visit</th>
+  <th>date of entry</th>
+  <th>time of entry</th>
+  <th>time of exit</th>
+</tr>
+<tr *ngFor="let visit of local1">
+  <td>{{visit.visitorName}}</td>
+  <td>{{visit.email}}</td>
+  <td>{{visit.typeOfVisit}}</td>
+  <td>{{visit.personToVisit}}</td>
+  <td>{{visit.currentDate}}</td>
+  <td>{{visit.timeOfEntry}}</td>
+  <td>{{visit.timeOfExit}}</td>
+
+</tr>
+</table>
+
+

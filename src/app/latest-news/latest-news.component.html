@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th>Author</th>
+    <th>Content</th>
+    <th>Description</th>
+    <th>publishedAt</th>
+    <th>source</th>
+    <th>title</th>
+    <th>News</th>
+    <th>Images</th>
+  </tr>
+  <tr *ngFor="let news of latesNews">
+    <td>{{news.author}}</td>
+    <td>{{news.content}}</td>
+    <td>{{news.description}}</td>
+    <td>{{news.publishedAt}}</td>
+    <td>{{news.source.name}}</td>
+    <td>{{news.title}}</td>
+    <td><a href={{news.url}}>News</a></td>
+    <td >
+      <img style="width: 100px; height: 100px;" src={{news.urlToImage}} alt="helo" />
+    </td>
+  </tr>
+</table>

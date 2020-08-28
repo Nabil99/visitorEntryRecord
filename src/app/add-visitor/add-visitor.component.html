@@ -1,0 +1,90 @@
+<!-- Html And Css code copy from W3school -->
+
+<div class="container">
+  <form [formGroup]="visitorForm" (ngSubmit)= "submitFormData()" >
+    <div class="row">
+      <div class="col-25">
+        <label for="fname"> Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" placeholder="Enter Visitor Name" formControlName="visitorName">
+        <div *ngIf="vlog.visitorName.errors && vlog.visitorName.touched" class="">
+          <div *ngIf="vlog.visitorName.errors.required">Name is required</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Email</label>
+      </div>
+      <div class="col-75">
+        <input type="text" placeholder="Enter Visitor Email" formControlName="email">
+        <div *ngIf="vlog.email.errors && vlog.email.touched" class="">
+          <div *ngIf="vlog.email.errors.required">Email is required</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Type Of Visit</label>
+      </div>
+      <div class="col-75">
+        <select formControlName = "typeOfVisit">
+          <option >Meeting</option>
+          <option >Delivery</option>
+          <option >Personal</option>
+        </select>
+        <div *ngIf="vlog.typeOfVisit.errors && vlog.typeOfVisit.touched" class="">
+          <div *ngIf="vlog.typeOfVisit.errors.required">Type of visit is required!</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Person To visit</label>
+      </div>
+      <div class="col-75">
+        <input type="text" placeholder="Person To Visit" formControlName="personToVisit">
+        <div *ngIf="vlog.personToVisit.errors && vlog.personToVisit.touched" class="">
+          <div *ngIf="vlog.personToVisit.errors.required">person to visit required!</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Date of entry</label>
+      </div>
+      <div class="col-75">
+        <input type="text" formControlName="currentDate" placeholder="enter Today's Date: DD/MM/YY" >
+        <div *ngIf="vlog.currentDate.errors && vlog.currentDate.touched" class="">
+          <div *ngIf="vlog.currentDate.errors.required">Date is required!</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Time Of Entry</label>
+      </div>
+      <div class="col-75">
+        <input type="text" formControlName="timeOfEntry" placeholder="enter Entry Time: HH:MM">
+        <div *ngIf="vlog.timeOfEntry.errors && vlog.timeOfEntry.touched" class="">
+          <div *ngIf="vlog.timeOfEntry.errors.required">Entry Time is required!</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Time Of Exit</label>
+      </div>
+      <div class="col-75">
+        <input type="text" formControlName="timeOfExit" placeholder="enter Exit Time: HH:MM">
+        <div *ngIf="vlog.timeOfExit.errors && vlog.timeOfExit.touched" class="">
+          <div *ngIf="vlog.timeOfExit.errors.required">Exit Time is required!</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit"[disabled]="!visitorForm.valid" value="Add Visitor">
+    </div>
+  </form>
+</div>
